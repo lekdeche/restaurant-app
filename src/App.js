@@ -1,25 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import ProductCard from './components/ProductCard/ProductCard'
+import { db } from './data/db'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+	return (
+		<section>
+			React App
+			<div className='flex'>
+				{db.courses.map(course => <ProductCard name={course.name} image={course.image} description={course.description} price={course.price} />)}
+			</div>
+		</section>
+	)
 }
 
-export default App;
+export default App
