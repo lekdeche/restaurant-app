@@ -1,3 +1,43 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.app {
+    display: grid;
+    grid-template-columns: 100%;
+}
+
+.swiper-slide {
+    width: 256px;
+}
+
+@media screen and (max-width: 1023px) {
+    .navigation {
+    
+    /*display: none; */
+    @apply fixed top-0 bottom-0 left-0 right-0 z-20 flex flex-col 
+    justify-center items-center bg-black text-white bg-opacity-80;
+
+    }
+    .hide-navbar {
+        display: none;
+    }
+
+   
+}
+
+@media screen and (min-width: 1024px) {
+    .navigation {
+        /*display: initial;*/
+        @apply w-80 flex-shrink-0 p-8 h-screen;
+    }
+
+    .app {
+
+        grid-template-columns: 320px calc(100% - 320px);
+        
+    }
+
+}
+
+
